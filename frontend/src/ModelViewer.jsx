@@ -6,7 +6,7 @@ export default function ModelViewer(props) {
   const [model, setModel] = useState(null);
 
   const instance = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://backend-drab-nu.vercel.app'
   });
 
   useEffect(() => { 

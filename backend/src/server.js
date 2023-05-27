@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 5000;
 
-const uri = "mongodb+srv://root:8888@cluster0.p13usi6.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://root:8888@cluster0.hbu7pij.mongodb.net/?retryWrites=true&w=majority";
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -29,7 +28,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-app.post('/api/models', upload.single('model'), (req, res) => {
+app.post('/api/models ', upload.single('model'), (req, res) => {
   const newModel = new Model({
     name: req.body.name,
     model: req.file.path
@@ -60,4 +59,3 @@ app.get('/api/models/:id', (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
