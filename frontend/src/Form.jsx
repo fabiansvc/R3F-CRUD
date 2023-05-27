@@ -8,7 +8,7 @@ export default function Form() {
   const [id, setId] = useState('')
 
   const instance = axios.create({
-    baseURL: 'https://backend-drab-nu.vercel.app'
+    baseURL: 'https://r3-f-crud.vercel.app/'
   });
 
   const handleSubmit = async (e) => {
